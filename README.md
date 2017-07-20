@@ -2,7 +2,7 @@
 RefWorks specific git configuration files.
 
 ## Setup
-Clone this directory to ~/.gitconfig.d
+Clone this repository to ~/.gitconfig.d
 ```bash
 git clone git@github.com:proquest/gitconfig.d.git ~/.gitconfig.d
 ```
