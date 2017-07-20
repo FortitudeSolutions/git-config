@@ -3,8 +3,13 @@ RefWorks specific git configuration files.
 
 ## Setup
 Clone this repository to ~/.gitconfig.d
+SSH
 ```
 git clone git@github.com:proquest/gitconfig.d.git ~/.gitconfig.d
+```
+HTTPS
+```
+git clone https://github.com/proquest/gitconfig.d.git ~/.gitconfig.d
 ```
 
 Include the aliases in your existing .gitconfig file
