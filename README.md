@@ -13,3 +13,21 @@ Include the aliases in your existing .gitconfig file
   path = .gitconfig.d/release-aliases 
   path = .gitconfig.d/general-aliases
 ```
+
+It should look something like this:
+```
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+  name = Michael Nishizawa
+  email = michael.nishizawa@proquest.com
+
+[include]
+  path = .gitconfig.d/release-aliases
+  path = .gitconfig.d/general-aliases
+```
+
+To validate that your setup is correct, the following command should show you the aliases that are recognized:
+```
+git config --get-regexp alias
+```
