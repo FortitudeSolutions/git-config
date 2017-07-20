@@ -1,4 +1,4 @@
 [alias]
   create-release = "!f(){ git checkout master && git pull && git branch \"release/$1\" && git checkout \"release/$1\"; }; f"
   publish = "!f() { branch=$(git branch  | sed -n -e 's/^\\* \\(.*\\)/\\1/p') && git push -u origin $branch; }; f"
-  release = "!f() { branch=$(git branch  | sed -n -e 's/^\\* \\(.*\\)/\\1/p') && version=$(echo $branch | sed -n -e 's/^release\\/\\(.*\\)/\\1/p') && git checkout prod && git pull && git merge --no-ff $branch && git tag $version && git push origin prod && git push origin --tags && git branch -d $branch && git push origin --delete $branch; }; f"
+  release = "!f() { branch=$(git branch  | sed -n -e 's/^\\* \\(.*\\)/\\1/p') && version=$(echo $branch | sed -n -e 's/^release\\/\\(.*\\)/\\1/p') && git checkout production && git pull && git merge --no-ff $branch && git tag $version && git push origin production && git push origin --tags && git branch -d $branch && git push origin --delete $branch; }; f"
