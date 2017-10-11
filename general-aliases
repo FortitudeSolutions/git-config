@@ -1,3 +1,4 @@
 [alias]
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   sync = "!f() { branch=$(git branch  | sed -n -e 's/^\\* \\(.*\\)/\\1/p') && git checkout \"$1\" && git pull && git checkout $branch && git merge $1; }; f"
+  dmrg = !git checkout master && git branch --merged | sed -e 's/^\\*.*$//g' | xargs git branch -d {}
