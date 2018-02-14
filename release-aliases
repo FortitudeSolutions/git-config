@@ -1,4 +1,3 @@
 [alias]
   create-release = "!f(){ git checkout master && git pull && git tag $1 && git branch \"release/$1\" && git checkout \"release/$1\"; }; f"
-  publish = "!f() { branch=$(git branch  | sed -n -e 's/^\\* \\(.*\\)/\\1/p') && git push -u origin $branch; }; f"
-  release = "!f() { branch=$(git branch  | sed -n -e 's/^\\* \\(.*\\)/\\1/p') && if ! [[ "$branch" =~ ^release/.* || "$branch" =~ ^hotfix/.* ]]; then echo "Releasable branches are in the form 'release/' or 'hotfix/'"; exit 1; fi && git checkout production && git pull && git merge --no-ff $branch && git push origin production && git push origin --tags && git branch -d $branch && git push origin --delete $branch; }; f"
+  release = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && if ! [[ "$branch" =~ ^release/.* || "$branch" =~ ^hotfix/.* ]]; then echo "Releasable branches are in the form 'release/' or 'hotfix/'"; exit 1; fi && git checkout production && git pull && git merge --no-ff $branch && git push origin production && git push origin --tags && git branch -d $branch && git push origin --delete $branch; }; f"
