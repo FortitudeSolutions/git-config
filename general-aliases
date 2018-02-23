@@ -4,4 +4,4 @@
   cleanup = !git checkout master && git branch --merged | sed -E 's/^\\*.*$//g' | xargs git branch -d {}
   publish = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git push -u origin $branch; }; f"
   url = !git remote get-url --push origin | sed -E 's/^git@(.*).git$/\\1/g' | sed -E 's/:/\\//g'
-  cpr = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) &&  open https://$(git url)/compare/$branch?expand=1; }; f"
+  create-pr = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git publish && open https://$(git url)/compare/$branch?expand=1; }; f"
