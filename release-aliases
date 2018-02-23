@@ -1,4 +1,4 @@
 [alias]
-  create-release = "!f(){ if [ "$1" == "" ]; then echo "usage: git create-release release-tag"; exit 1; fi; git checkout master && git pull && git tag $1 && git checkout -b \"release/$1\"; }; f"
-  create-patch-release = "!f(){ if [ "$1" == "" ]; then echo "usage: git create-patch-release release-tag"; exit 1; fi; git checkout production && git pull && git tag $1 && git checkout -b \"hotfix/$1\"; }; f"
+  create-release = "!f(){ if [ "$1" == "" ]; then echo "usage: git create-release {release-tag}"; exit 1; fi; git checkout master && git pull && git tag $1 && git checkout -b \"release/$1\"; }; f"
+  create-patch-release = "!f(){ if [ "$1" == "" ]; then echo "usage: git create-patch-release {release-branch}"; exit 1; fi; git checkout production && git pull && git tag $1 && git checkout -b \"hotfix/$1\"; }; f"
   release = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && if ! [[ "$branch" =~ ^release/.* || "$branch" =~ ^hotfix/.* ]]; then echo "Releasable branches are in the form 'release/' or 'hotfix/'"; exit 1; fi && git checkout production && git pull && git merge --no-ff $branch && git push origin production && git push origin --tags && git branch -d $branch && git push origin --delete $branch; }; f"
