@@ -149,13 +149,13 @@ git url
 *Example: Navigate to the project page in github*
 ```bash
 # Mac
-open https://$(git url)
+open `git url`
 
 # Linux (Ubuntu)
-xdg-open https://$(git url)
+xdg-open `git url`
 
 # Windows
-start https://$(git url)
+start `git url`
 ```
 
 ---

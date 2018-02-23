@@ -3,5 +3,5 @@
   sync = "!f() { if [ "$1" == "" ]; then echo "usage: git sync {branch-name}"; exit 1; fi; branch=$(git rev-parse --abbrev-ref HEAD) && git checkout \"$1\" && git pull && git checkout $branch && git merge $1; }; f"
   cleanup = !git checkout master && git branch --merged | sed -E 's/^\\*.*$//g' | xargs git branch -d {}
   publish = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git push -u origin $branch; }; f"
-  url = !git remote get-url --push origin | sed -E 's/^git@(.*).git$/\\1/g' | sed -E 's/:/\\//g'
-  create-pr = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git publish && open https://$(git url)/compare/$branch?expand=1; }; f"
+  url = "!f() { echo https://$(git remote get-url --push origin | sed -E 's/^git@(.*).git$/\\1/g' | sed -E 's/:/\\//g'); }; f"
+  create-pr = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git publish && open $(git url)/compare/$branch?expand=1; }; f"
