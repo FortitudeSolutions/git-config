@@ -1,6 +1,6 @@
 [alias]
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-  sync = "!f() { if [ "$1" == "" ]; then echo "usage: git sync {branch-name}"; exit 1; fi; branch=$(git rev-parse --abbrev-ref HEAD) && git checkout \"$1\" && git pull && git checkout $branch && git merge $1; }; f"
+  sync = "!f() { if [ \"$1\" = \"\" ]; then echo "usage: git sync {branch-name}"; exit 1; fi; branch=$(git rev-parse --abbrev-ref HEAD) && git checkout \"$1\" && git pull && git checkout $branch && git merge $1; }; f"
   cleanup = !git checkout master && git branch --merged | sed -E 's/^\\*.*$//g' | xargs git branch -d {}
   publish = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && git push -u origin $branch; }; f"
   url = "!f() { echo https://$(git remote get-url --push origin | sed -E 's/^git@(.*).git$/\\1/g' | sed -E 's/:/\\//g'); }; f"
