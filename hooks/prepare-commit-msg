@@ -1,0 +1,12 @@
+#!/bin/bash
+
+branchName=`git rev-parse --abbrev-ref HEAD`
+#jiraId=$(echo $branchName | sed -nr 's,[a-z]+/([A-Z]+-[0-9]+)-.+,\1,p')
+
+read -r branchType issueId description <<<$(echo $branchName | sed -nE 's/(.*)\/(.*)\/(.*)/\1 \2 \3/p')
+
+if [ -z "$issueId" ]; then
+  exit 0
+fi
+
+sed -i.bak -e "1s/^/\[$issueId\]: /" $1
