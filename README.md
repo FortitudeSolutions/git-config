@@ -15,6 +15,9 @@ Table of Contents
       * [create-release - Create a new release](#create-release---create-a-new-release)
       * [create-patch-release - Create a patch release](#create-patch-release---create-a-patch-release)
       * [release - Release the code in the current branch](#release---release-the-code-in-the-current-branch)
+  * [Hooks](#hooks)
+      * [pre-commit](#pre-commit)
+      * [prepare-commit-msg](#prepare-commit-msg)
 
 
 
