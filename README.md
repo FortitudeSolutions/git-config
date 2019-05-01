@@ -1,5 +1,5 @@
 # gitconfig.d
-RefWorks specific git configuration files.
+Git configuration files.
 
 Table of Contents
 =================
@@ -32,8 +32,8 @@ git clone git@github.com:proquest/gitconfig.d.git ~/.gitconfig.d
 Include the aliases in your existing .gitconfig file
 ```
 [include]
-  path = ~/.gitconfig.d/release-aliases 
-  path = ~/.gitconfig.d/general-aliases
+  path = ~/.gitconfig.d/aliases/release-aliases 
+  path = ~/.gitconfig.d/aliases/general-aliases
 ```
 
 It should look something like this:
@@ -45,13 +45,17 @@ It should look something like this:
   email = michael.nishizawa@proquest.com
 
 [include]
-  path = ~/.gitconfig.d/release-aliases
-  path = ~/.gitconfig.d/general-aliases
+  path = ~/.gitconfig.d/aliases/release-aliases
+  path = ~/.gitconfig.d/aliases/general-aliases
 ```
 
 To validate that your setup is correct, the following command should show you the aliases that are recognized:
 ```
 git config --get-regexp alias
+```
+To use the hooks:
+```
+git config --global core.hooksPath ~/.gitconfig.d/hooks
 ```
 
 ## Available commands
@@ -230,3 +234,15 @@ git release
   * git branch -d my-branch
   * git push origin --delete my-branch
 =======
+
+## Hooks
+---
+#### Pre-commit
+---
+ - Prevents commit of files with @@NOCOMMIT@@ anywhere in them
+ - Prevents empty commits
+
+---
+#### Prepare-commit-message
+---
+ - Looks for branches matching the pattern change-type/issue-id/description and appends the issue-id to the commit message automatically
