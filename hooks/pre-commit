@@ -1,0 +1,16 @@
+#!/bin/sh
+
+
+# Don't commit files that have been tagged @@NOCOMMIT@@
+noCommitFiles=$(grep -l "@@NOCOMMIT@@" $(git diff --name-only --cached) /dev/null)
+if [ ! -z "$noCommitFiles" ]; then
+  echo "Pre-commit: Unstaging no-commit files: "
+  git reset -q HEAD -- $noCommitFiles
+fi
+
+
+# Don't create empty commits.
+if [ $(git diff --name-only --cached | wc -l) -le 0 ]; then
+  echo "Pre-commit: No remaining files to commit... aborting"
+  exit 1
+fi
