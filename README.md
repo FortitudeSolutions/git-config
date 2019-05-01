@@ -29,8 +29,8 @@ git clone git@github.com:proquest/gitconfig.d.git ~/.gitconfig.d
 Include the aliases in your existing .gitconfig file
 ```
 [include]
-  path = .gitconfig.d/release-aliases 
-  path = .gitconfig.d/general-aliases
+  path = ~/.gitconfig.d/release-aliases 
+  path = ~/.gitconfig.d/general-aliases
 ```
 
 It should look something like this:
@@ -42,8 +42,8 @@ It should look something like this:
   email = michael.nishizawa@proquest.com
 
 [include]
-  path = .gitconfig.d/release-aliases
-  path = .gitconfig.d/general-aliases
+  path = ~/.gitconfig.d/release-aliases
+  path = ~/.gitconfig.d/general-aliases
 ```
 
 To validate that your setup is correct, the following command should show you the aliases that are recognized:
@@ -226,3 +226,4 @@ git release
   * git push origin --tags 
   * git branch -d my-branch
   * git push origin --delete my-branch
+=======
