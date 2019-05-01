@@ -1,7 +1,6 @@
 #!/bin/bash
-
 branchName=`git rev-parse --abbrev-ref HEAD`
-#jiraId=$(echo $branchName | sed -nr 's,[a-z]+/([A-Z]+-[0-9]+)-.+,\1,p')
+echo $branchName
 
 read -r branchType issueId description <<<$(echo $branchName | sed -nE 's/(.*)\/(.*)\/(.*)/\1 \2 \3/p')
 
