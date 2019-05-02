@@ -74,21 +74,21 @@ git lg
 
 ```
 * 20fa088860 - Mon, 19 Feb 2018 10:19:17 -0500 (4 days ago)
-|           Updating templates for file attachments to use the Progress Bar directive Fixing Language Dropdown to use ng-cloak Dropdown/dropdown-up style cleanup - Scott A. Engemann
+|           Updating templates for file attachments - Scott
 * d2e940d3ee - Tue, 13 Feb 2018 12:36:30 -0500 (10 days ago)
-|           Initial Branch Commit - Scott A. Engemann
+|           Initial Branch Commit - Scott
 | * d108cf4ff3 - Thu, 22 Feb 2018 18:06:15 -0500 (21 hours ago) (HEAD -> master, origin/master, origin/HEAD)
-| |           Undoing my commit - Scott A. Engemann
+| |           Undoing my commit - Scott
 | * f59604bc4e - Thu, 22 Feb 2018 18:02:13 -0500 (21 hours ago)
-| |           Resolving what would be a conflict - Scott A. Engemann
+| |           Resolving what would be a conflict - Scott
 | *   34ae4eaf01 - Thu, 22 Feb 2018 10:10:40 -0500 (29 hours ago)
-| |\            Merge pull request #584 from proquest/feature/RW-253-sbtDeployStyles - Gordon McCowey
-| | * 7ced7a9bd6 - Tue, 20 Feb 2018 09:18:37 -0500 (3 days ago) (origin/feature/RW-253-sbtDeployStyles)
-| | |           RW-253 review comments and fail on exceptions - PQ\MSwanson
+| |\            Merge pull requests - Gordon 
+| | * 7ced7a9bd6 - Tue, 20 Feb 2018 09:18:37 -0500 (3 days ago) (origin/feature/sbtDeployStyles)
+| | |           RW-253 review comments and fail on exceptions - Mark
 | | * f669f842f5 - Mon, 19 Feb 2018 21:40:01 -0500 (4 days ago)
-| | |           RW-253 improve logging for s3 access - PQ\MSwanson
+| | |           RW-253 improve logging for s3 access - Mark
 | | * 5167320a93 - Mon, 19 Feb 2018 17:09:25 -0500 (4 days ago)
-| | |           RW-253 Support RW3-PROD-OUTPUT-STYLES for updating OutputStyles.zip for staging and prod - PQ\MSwanson
+| | |           RW-253 Support RW3-PROD-OUTPUT-STYLES for updating OutputStyles.zip for staging and prod - Mark
 | * |   8e392269e0 - Wed, 21 Feb 2018 17:05:20 -0300 (2 days ago)
 ```
 
