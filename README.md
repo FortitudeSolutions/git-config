@@ -26,7 +26,7 @@ Clone this repository to ~/.gitconfig.d
 
 SSH
 ```
-git clone git@github.com:proquest/gitconfig.d.git ~/.gitconfig.d
+git clone git@github.com:FortitudeSolutions/git-config.git ~/.gitconfig.d
 ```
 
 Include the aliases in your existing .gitconfig file
